@@ -1,0 +1,986 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7f1e8;
+    color: #28231c;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* =========================================
+   COLORS
+========================================= */
+
+:root {
+    --cream: #f7f3eb;
+    --dark: #17130e;
+    --gold: #c9943d;
+    --light-gold: #d9b46b;
+    --brown: #3a2917;
+    --white: #ffffff;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    position: relative;
+    z-index: 100;
+
+    height: 94px;
+
+    background: var(--cream);
+
+    border-bottom: 1px solid #ddd5c7;
+}
+
+
+.nav-container {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    padding: 0 6.5%;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    position: absolute;
+
+    left: 5%;
+
+    top: 0;
+
+    width: 190px;
+
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    border: 1px solid #d9d1c2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 10;
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.logo img {
+    width: 82%;
+
+    height: 82%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 58px;
+
+    margin-right: 55px;
+}
+
+
+.navigation a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #27231e;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+
+    padding: 37px 0;
+
+    transition: 0.3s ease;
+}
+
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+
+/* Active HOME */
+
+.navigation a.active {
+    color: #b88942;
+}
+
+
+.navigation a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 26px;
+
+    height: 2px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================
+   VISIT BUTTON
+========================================= */
+
+.visit-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 174px;
+
+    height: 52px;
+
+    background: var(--gold);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+
+.visit-button:hover {
+    background: #ad7b2f;
+
+    transform: translateY(-2px);
+}
+
+
+.location-icon {
+    font-size: 19px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 655px;
+
+    background-image: url("/images/index-hero.jpeg");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* Dark layer over image */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 11, 7, 0.92) 0%,
+            rgba(19, 13, 8, 0.78) 27%,
+            rgba(20, 14, 9, 0.30) 55%,
+            rgba(20, 15, 10, 0.05) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    margin-left: 5%;
+
+    margin-top: 12px;
+
+    color: white;
+}
+
+
+/* Small title */
+
+.eyebrow {
+    color: var(--light-gold);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 22px;
+}
+
+
+/* Main title */
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 5vw, 82px);
+
+    line-height: 0.99;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Description */
+
+.hero-description {
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+
+    font-size: 25px;
+
+    line-height: 1.35;
+
+    color: #d9b46b;
+
+    margin-bottom: 34px;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.primary-button,
+.secondary-button {
+    min-height: 56px;
+
+    padding: 0 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    transition: 0.3s ease;
+}
+
+
+/* Gold button */
+
+.primary-button {
+    background: var(--gold);
+
+    color: white;
+
+    border: 1px solid var(--gold);
+}
+
+
+.primary-button:hover {
+    background: #b27f32;
+
+    border-color: #b27f32;
+}
+
+
+/* Transparent button */
+
+.secondary-button {
+    background: rgba(20, 15, 10, 0.2);
+
+    color: white;
+
+    border: 2px solid var(--gold);
+}
+
+
+.secondary-button:hover {
+    background: var(--gold);
+}
+
+/* ================================
+   WELCOME SECTION
+================================ */
+
+.welcome {
+    background: #f7f1e8;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.welcome-text {
+    width: 32%;
+}
+
+.small-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #a75b36;
+}
+
+.welcome-text h2,
+.coffee-food-text h2 {
+    font-family: Georgia, serif;
+    font-size: 35px;
+    font-weight: 400;
+    margin: 10px 0 20px;
+    color: #33251e;
+}
+
+.welcome-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #5f5149;
+}
+
+.gold-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 24px;
+    background: var(--gold);
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+
+
+/* ================================
+   WELCOME CARDS
+================================ */
+
+.welcome-cards {
+    width: 68%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.welcome-card {
+    background: #fdfaf5;
+    border: 1px solid #e5ddd3;
+}
+
+.welcome-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-text {
+    text-align: center;
+    padding: 12px 8px 15px;
+}
+
+.card-text h3 {
+    margin: 0 0 5px;
+    font-size: 13px;
+    color: #44352d;
+}
+
+.card-text p {
+    margin: 0;
+    font-size: 11px;
+    color: #776961;
+}
+
+
+/* ================================
+   FEATURES
+================================ */
+
+.features {
+    background: var(--gold);
+    padding: 25px 7%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    color: white;
+}
+
+.feature {
+    text-align: center;
+    padding: 5px 20px;
+    border-right: 1px solid rgba(255,255,255,.4);
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature-icon {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.feature h3 {
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: .5px;
+    margin: 0 0 8px;
+}
+
+.feature p {
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* ================================
+   COFFEE & FOOD
+================================ */
+
+.coffee-food {
+    background: #f7f1e8;
+    padding: 65px 8%;
+    display: flex;
+    gap: 45px;
+    align-items: center;
+}
+
+.coffee-food-text {
+    width: 28%;
+}
+
+.coffee-food-text h2 {
+    font-size: 31px;
+    line-height: 1.15;
+}
+
+.coffee-food-text p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #665950;
+}
+
+.outline-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 18px;
+    border: 1px solid #9c7059;
+    color: #70432f;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   FOOD CARDS
+================================ */
+
+.food-cards {
+    width: 72%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.food-card {
+    background: #fdfaf5;
+    border: 1px solid #e4dcd2;
+    text-align: center;
+}
+
+.food-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.food-card h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #4b3a31;
+    padding: 10px 5px;
+    margin: 0;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    background-color: var(--gold);
+    color: #F5E6D8;
+    padding: 2.5rem 1rem;
+    border-radius: 0px;
+    margin-top: 3rem;
+}
+
+footer h3 {
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+}
+
+footer p {
+    color: #D5C4B4;
+    font-size: 0.9rem;
+}
+
+footer nav {
+    margin: 1.5rem 0;
+}
+
+footer nav a {
+    color: #F5E6D8;
+}
+
+footer nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .navigation {
+        gap: 25px;
+        margin-right: 20px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .visit-button {
+        min-width: 130px;
+        height: 46px;
+        font-size: 11px;
+    }
+
+    .welcome,
+    .coffee-food {
+        gap: 30px;
+        padding: 55px 5%;
+    }
+
+    .welcome-card img {
+        height: 160px;
+    }
+
+    .food-card img {
+        height: 135px;
+    }
+}
+
+
+/* =========================================
+   MOBILE PHONES
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* NAVIGATION */
+
+    .nav-container {
+        min-height: auto;
+        padding: 20px 5%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .logo {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 115px;
+        height: 115px;
+    }
+
+    .navigation {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+        margin-right: 0;
+    }
+
+    .navigation a {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+
+    .navigation a.active::after {
+        bottom: 0;
+    }
+
+    .visit-button {
+        min-width: 150px;
+        height: 44px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero-content {
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 10vw, 58px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 19px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        min-height: 50px;
+        padding: 0 19px;
+        font-size: 11px;
+    }
+
+
+    /* WELCOME */
+
+    .welcome {
+        padding: 50px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .welcome-text {
+        width: 100%;
+    }
+
+    .welcome-cards {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .welcome-card img {
+        height: 160px;
+    }
+
+
+    /* FEATURES */
+
+    .features {
+        padding: 30px 5%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 10px;
+    }
+
+    .feature {
+        padding: 10px 8px;
+        border-right: none;
+    }
+
+
+    /* COFFEE & FOOD */
+
+    .coffee-food {
+        padding: 50px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .coffee-food-text {
+        width: 100%;
+    }
+
+    .food-cards {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .food-card img {
+        height: 160px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .navigation {
+        gap: 9px 13px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .welcome-cards,
+    .food-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-card img {
+        height: 200px;
+    }
+
+    .food-card img {
+        height: 210px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 20px;
+    }
+
+    .feature:last-child {
+        border-bottom: none;
+    }
+
+}
+
+/* =========================================
+   FIX MOBILE NAVBAR
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .nav-container {
+        height: auto;
+        min-height: 0;
+        padding: 15px 5% 25px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+    .logo {
+        position: relative;
+        top: auto;
+        left: auto;
+
+        width: 105px;
+        height: 105px;
+
+        margin: 0 auto;
+    }
+
+    .navigation {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 14px 20px;
+
+        margin: 0;
+    }
+
+    .navigation a {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+
+    .navigation a.active::after {
+        bottom: 0;
+    }
+
+    .visit-button {
+        min-width: 150px;
+        width: auto;
+        height: 46px;
+    }
+
+    .hero {
+        min-height: 560px;
+        margin-top: 0;
+    }
+
+    .hero-content {
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+
+}
+
+
+
+

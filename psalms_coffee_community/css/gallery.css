@@ -1,0 +1,938 @@
+/* =========================================
+   GENERAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7f1e8;
+    color: #302015;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* =========================================
+   COLORS
+========================================= */
+
+:root {
+    --cream: #f7f3eb;
+    --dark: #17130e;
+    --gold: #c9943d;
+    --light-gold: #d9b46b;
+    --brown: #3a2917;
+    --white: #ffffff;
+   
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar {
+    position: relative;
+    z-index: 100;
+
+    height: 94px;
+
+    background: var(--cream);
+
+    border-bottom: 1px solid #ddd5c7;
+}
+
+
+.nav-container {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    padding: 0 6.5%;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    position: absolute;
+
+    left: 5%;
+
+    top: 0;
+
+    width: 190px;
+
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    border: 1px solid #d9d1c2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 10;
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.logo img {
+    width: 82%;
+
+    height: 82%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 58px;
+
+    margin-right: 55px;
+}
+
+
+.navigation a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #27231e;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+
+    padding: 37px 0;
+
+    transition: 0.3s ease;
+}
+
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+
+/* Active HOME */
+
+.navigation a.active {
+    color: #b88942;
+}
+
+
+.navigation a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 26px;
+
+    height: 2px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================
+   VISIT BUTTON
+========================================= */
+
+.visit-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 174px;
+
+    height: 52px;
+
+    background: #c9943d;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+
+.visit-button:hover {
+    background: #ad7b2f;
+
+    transform: translateY(-2px);
+}
+
+
+.location-icon {
+    font-size: 19px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.gallery-hero {
+    position: relative;
+
+    min-height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("/images/gallery\ hero.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(45, 25, 12, 0.72),
+        rgba(45, 25, 12, 0.30),
+        rgba(45, 25, 12, 0.55)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+    color: #fffaf4;
+
+    padding: 30px 20px;
+}
+
+.hero-small {
+    font-size: 17px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.hero-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    margin-top: 20px;
+
+    font-size: 28px;
+}
+
+.hero-line span {
+    display: block;
+    width: 75px;
+    height: 1px;
+    background: #fffaf4;
+}
+
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+.gallery-section {
+    padding: 20px 5% 55px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #f7f1e8;
+}
+
+
+/* =========================================
+   MASONRY GRID
+========================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    align-items: start;
+  padding-top: 50px;
+}
+
+.gallery-column {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    min-width: 0;
+}
+
+
+/* Images */
+
+.gallery-item {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #e8dccc;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 400px;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   STORY CARD
+========================================= */
+
+.story-card {
+    background: #eadbc9;
+
+    text-align: center;
+
+    padding: 32px 20px;
+
+    min-height: 170px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+}
+
+.story-card h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.story-line {
+    width: 45px;
+    height: 1px;
+    background: #5b3c28;
+    margin: 17px 0;
+}
+
+.story-card p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 240px;
+}
+
+
+/* Two small images */
+
+.small-gallery-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    align-items: start;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+    text-align: center;
+    background-color: var(--gold);
+    color: #F5E6D8;
+    padding: 2.5rem 1rem;
+    border-radius: 0px;
+    margin-top: 3rem;
+}
+
+footer h3 {
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+}
+
+footer p {
+    color: #D5C4B4;
+    font-size: 0.9rem;
+}
+
+footer nav {
+    margin: 1.5rem 0;
+}
+
+footer nav a {
+    color: #F5E6D8;
+}
+
+footer nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+
+/* =========================================
+   DESKTOP
+   1101px and above
+========================================= */
+
+@media (min-width: 1101px) {
+
+    .nav-container {
+        padding: 0 6%;
+    }
+
+    .navigation {
+        gap: 45px;
+        margin-right: 35px;
+    }
+
+    .logo {
+        width: 170px;
+        height: 170px;
+    }
+
+    .visit-button {
+        min-width: 160px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+   801px - 1100px
+========================================= */
+
+@media (min-width: 801px) and (max-width: 1100px) {
+
+    .navbar {
+        height: 85px;
+    }
+
+    .nav-container {
+        padding: 0 3%;
+    }
+
+    .logo {
+        width: 125px;
+        height: 125px;
+        left: 3%;
+    }
+
+    .navigation {
+        gap: 22px;
+        margin-right: 15px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+        padding: 32px 0;
+    }
+
+    .navigation a.active::after {
+        bottom: 22px;
+    }
+
+    .visit-button {
+        min-width: 120px;
+        height: 44px;
+        font-size: 11px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding-top: 35px;
+    }
+
+    .gallery-item img {
+        height: 320px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   601px - 800px
+========================================= */
+
+@media (min-width: 601px) and (max-width: 800px) {
+
+    .navbar {
+        height: auto;
+    }
+
+    .nav-container {
+        min-height: 80px;
+        padding: 12px 20px;
+
+        justify-content: flex-end;
+    }
+
+    /* Smaller logo */
+
+    .logo {
+        width: 100px;
+        height: 100px;
+
+        left: 20px;
+        top: 0;
+    }
+
+    /* Keep navigation on one line */
+
+    .navigation {
+        gap: 15px;
+        margin-right: 0;
+    }
+
+    .navigation a {
+        font-size: 10px;
+        padding: 30px 0;
+    }
+
+    .navigation a.active::after {
+        bottom: 21px;
+    }
+
+    .visit-button {
+        min-width: 105px;
+        height: 40px;
+
+        padding: 0 12px;
+
+        font-size: 10px;
+    }
+
+    /* Gallery */
+
+    .gallery-hero {
+        min-height: 270px;
+    }
+
+    .hero-small {
+        font-size: 13px;
+        letter-spacing: 5px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .gallery-section {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding-top: 30px;
+    }
+
+    .gallery-item img {
+        height: 300px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   401px - 600px
+========================================= */
+
+@media (min-width: 401px) and (max-width: 600px) {
+
+    .navbar {
+        height: auto;
+    }
+
+    .nav-container {
+        min-height: auto;
+
+        padding: 15px;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    /* Logo */
+
+    .logo {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 85px;
+        height: 85px;
+
+        margin: 0;
+    }
+
+    /* Navigation */
+
+    .navigation {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px 18px;
+
+        margin: 0;
+    }
+
+    .navigation a {
+        font-size: 11px;
+
+        padding: 4px 0;
+    }
+
+    .navigation a.active::after {
+        bottom: -3px;
+    }
+
+    /* Visit button */
+
+    .visit-button {
+        min-width: 130px;
+
+        height: 40px;
+
+        font-size: 11px;
+    }
+
+    /* Hero */
+
+    .gallery-hero {
+        min-height: 240px;
+    }
+
+    .hero-small {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-line span {
+        width: 45px;
+    }
+
+    /* Gallery */
+
+    .gallery-section {
+        padding: 15px 4% 40px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+
+        padding-top: 25px;
+    }
+
+    .gallery-item img {
+        height: auto;
+
+        aspect-ratio: 4 / 3;
+
+        object-fit: cover;
+    }
+
+    .small-gallery-row {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    /* Footer */
+
+    .footer {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+
+        padding: 30px 20px;
+    }
+
+    .footer-right {
+        position: static;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+
+    .footer-decoration {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   400px and below
+========================================= */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        height: auto;
+    }
+
+    .nav-container {
+        min-height: auto;
+
+        padding: 12px 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .logo {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 75px;
+        height: 75px;
+
+        margin: 0;
+    }
+
+    .navigation {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 7px 13px;
+
+        margin: 0;
+    }
+
+    .navigation a {
+        font-size: 10px;
+
+        padding: 4px 0;
+    }
+
+    .navigation a.active::after {
+        bottom: -3px;
+    }
+
+    .visit-button {
+        min-width: 115px;
+
+        height: 38px;
+
+        font-size: 10px;
+    }
+
+    /* Hero */
+
+    .gallery-hero {
+        min-height: 210px;
+    }
+
+    .hero-small {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hero-line span {
+        width: 35px;
+    }
+
+    /* Gallery */
+
+    .gallery-section {
+        padding: 15px 15px 35px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1opx;
+        padding-top: 25px;
+    }
+
+     .gallery-column {
+        gap: 10px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .small-gallery-row {
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+
+    .story-card {
+        padding: 25px 12px;
+        min-height: 150px;
+    }
+
+    .story-card h2 {
+        font-size: 19px;
+    }
+
+     .story-card p {
+        font-size: 14px;
+    }
+    /* Footer */
+
+    .footer {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 30px 15px;
+
+        text-align: center;
+    }
+
+    .footer-right {
+        position: static;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+
+    .footer-decoration {
+        display: none;
+    }
+}
